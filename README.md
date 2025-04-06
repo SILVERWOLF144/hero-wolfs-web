@@ -1,171 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🔥 Team Roles</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>HERO WOLFS Team</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at top, #1b1b1b, #000000);
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1600132806158-7b2dc7bce6c5?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      padding: 20px;
+      text-align: center;
+      padding: 2rem;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px #ff4e00;
     }
 
-    .logo {
-      height: 60px;
+    #logo {
+      width: 150px;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
-    .logo:hover {
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 10px #ff4e00);
+    #logo:hover {
+      transform: scale(1.1);
+      animation: firePulse 1.5s infinite ease-in-out;
     }
 
-    .intro-section {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .intro-section h1 {
-      font-size: 2.5em;
-      color: #ffe156;
-      animation: flicker 2s infinite;
-    }
-
-    .intro-section p {
-      font-size: 1.1em;
-      color: #ddd;
-    }
-
-    .achievements-section {
-      margin-top: 60px;
-      padding: 30px;
-      background: rgba(20, 20, 20, 0.8);
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .achievements-section h2 {
-      color: #ffe156;
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #ffe15655;
-    }
-
-    .achievements-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .achievements-list li {
-      font-size: 1.2em;
-      margin: 12px 0;
-      color: #f1f1f1;
-      text-shadow: 0 0 5px rgba(255,255,255,0.2);
-    }
-
-    #team-info {
-      text-align: center;
-      margin-top: 40px;
-      animation: fadeIn 0.5s ease-in-out;
+    @keyframes firePulse {
+      0% { filter: drop-shadow(0 0 8px orange); }
+      50% { filter: drop-shadow(0 0 16px red); }
+      100% { filter: drop-shadow(0 0 8px orange); }
     }
 
     .player-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .player-card {
-      background: #222;
-      border-radius: 16px;
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #ff9f1c;
+      border-radius: 12px;
+      padding: 1rem;
       width: 200px;
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 10px #ff9f1c66;
-      animation: pulse 2s infinite;
+      transition: transform 0.2s;
     }
 
     .player-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #ff9f1caa;
     }
 
     .player-info {
       display: none;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ffd8a8;
+    }
+
+    #team-info {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+    }
+
+    .discord-btn {
+      display: inline-block;
+      padding: 12px 24px;
       margin-top: 10px;
-      color: #ccc;
-      font-size: 0.95em;
-      animation: fadeIn 0.5s ease-in-out;
+      background: linear-gradient(45deg, #ff4e00, #ff9f1c);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #ff4e00aa;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: glowPulse 1.5s infinite ease-in-out;
     }
 
-    footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
+    .discord-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff9f1cdd;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #ff9f1c66; }
-      50% { box-shadow: 0 0 20px #ff9f1caa; }
-      100% { box-shadow: 0 0 10px #ff9f1c66; }
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        opacity: 0.4;
-      }
+    @keyframes glowPulse {
+      0%   { box-shadow: 0 0 10px #ff4e00aa; }
+      50%  { box-shadow: 0 0 20px #ff9f1cdd; }
+      100% { box-shadow: 0 0 10px #ff4e00aa; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Team Logo" class="logo" onclick="toggleInfo()">
-  </header>
 
-  <div class="intro-section">
-    <h1>Welcome to Our Fire Team 🔥</h1>
-    <p>We are a competitive CS2 team dominating the servers and breaking records.</p>
-  </div>
+  <h1>🔥 HERO WOLFS 🔥</h1>
+  <img id="logo" src="logo.png" alt="Team Logo" onclick="toggleTeamInfo()">
 
-  <div class="achievements-section">
-    <h2>🔥 Our Achievements</h2>
-    <ul class="achievements-list">
-      <li>🏆 Winners of Dust II Showdown 2024</li>
-      <li>🥇 Top 3 in Inferno Cup - Winter Edition</li>
-      <li>💥 Most Clutches in Mirage Masters League</li>
-    </ul>
-  </div>
-
-  <div id="team-info" style="display:none;">
+  <div id="team-info">
     <h2>About Us</h2>
-    <p>We are a passionate group of players with a fiery spirit, great teamwork, and a goal to conquer every tournament we enter.</p>
+    <p>We are a newly made team (HERO WOLFS). Founder SILWER WOLF made the team at 2025.03.04.</p>
+    <p><strong>📱 Where you can contact us:</strong></p>
+    <a href="https://discord.gg/4UXmkYtC" target="_blank" class="discord-btn">🔥 Join Our Discord 🔥</a>
+
     <h3>🔥 Team Roster</h3>
     <div class="player-cards">
       <div class="player-card" onclick="toggleDetails(this)">
@@ -189,22 +133,22 @@
         <div class="player-info">Master of the shadows. Sneaks behind lines, gathers intel, and outsmarts the enemy.</div>
       </div>
     </div>
+
+    <h3 style="margin-top: 2rem;">🏆 Achievements</h3>
+    <p style="animation: glowPulse 2s infinite; font-style: italic;">Nothing for now... 🔥 <em>Coming Soon</em>!</p>
   </div>
 
-  <footer>
-    &copy; 2025 Your Team Name. All rights reserved.
-  </footer>
-
   <script>
-    function toggleInfo() {
-      const info = document.getElementById("team-info");
-      info.style.display = info.style.display === "none" ? "block" : "none";
+    function toggleTeamInfo() {
+      const info = document.getElementById('team-info');
+      info.style.display = (info.style.display === 'none' || info.style.display === '') ? 'block' : 'none';
     }
 
     function toggleDetails(card) {
-      const info = card.querySelector(".player-info");
-      info.style.display = info.style.display === "block" ? "none" : "block";
+      const info = card.querySelector('.player-info');
+      info.style.display = (info.style.display === 'none' || info.style.display === '') ? 'block' : 'none';
     }
   </script>
+
 </body>
 </html>
