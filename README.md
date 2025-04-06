@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1600132806158-7b2dc7bce6c5?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1542219550-37153d387c67?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
@@ -20,9 +20,10 @@
     }
 
     #logo {
-      width: 150px;
+      width: 220px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      margin-bottom: 1rem;
     }
 
     #logo:hover {
@@ -31,9 +32,9 @@
     }
 
     @keyframes firePulse {
-      0% { filter: drop-shadow(0 0 8px orange); }
-      50% { filter: drop-shadow(0 0 16px red); }
-      100% { filter: drop-shadow(0 0 8px orange); }
+      0% { filter: drop-shadow(0 0 10px orange); }
+      50% { filter: drop-shadow(0 0 20px red); }
+      100% { filter: drop-shadow(0 0 10px orange); }
     }
 
     .player-cards {
@@ -69,7 +70,7 @@
       display: none;
       margin-top: 2rem;
       padding: 1rem;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
     }
 
