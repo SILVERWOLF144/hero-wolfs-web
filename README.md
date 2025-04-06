@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HERO WOLFS Team</title>
+  <title>HERO WOLFS</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1542219550-37153d387c67?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1607083206173-8b2776c1f8b0?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
@@ -20,10 +20,13 @@
     }
 
     #logo {
-      width: 220px;
+      width: 320px;
+      max-width: 90vw;
       cursor: pointer;
       transition: transform 0.3s ease;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #ff4e00cc;
     }
 
     #logo:hover {
